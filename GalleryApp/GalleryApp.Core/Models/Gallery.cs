@@ -9,5 +9,6 @@ namespace GalleryApp.Core.Models
     public class Gallery:BaseEntity
     {
         public string GalleryName { get; set; }
+        public string ImageUrl { get; set; }
     }
 }

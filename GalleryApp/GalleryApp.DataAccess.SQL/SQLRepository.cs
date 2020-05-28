@@ -6,7 +6,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.Entity;
+
 
 namespace GalleryApp.DataAccess.SQL
 {
@@ -22,32 +22,36 @@ namespace GalleryApp.DataAccess.SQL
         }
         public IQueryable<T> Collection()
         {
-            throw new NotImplementedException();
+            return _dbSet;
         }
 
         public void Commit()
         {
-            throw new NotImplementedException();
+            _dataContext.SaveChanges();
         }
 
         public void Delete(string id)
         {
-            throw new NotImplementedException();
+            var t = _dbSet.Find(id);
+            if (_dataContext.Entry(t).State == EntityState.Detached)
+                _dbSet.Attach(t);
+            _dbSet.Remove(t);
         }
 
         public T Find(string id)
         {
-            throw new NotImplementedException();
+            return _dbSet.Find(id);
         }
 
         public void Insert(T TEntity)
         {
-            throw new NotImplementedException();
+            _dbSet.Add(TEntity);
         }
 
         public void Update(T TEntity)
         {
-            throw new NotImplementedException();
+            _dbSet.Attach(TEntity);
+            _dataContext.Entry(TEntity).State = EntityState.Modified;
         }
     }
 }

@@ -1,3 +1,6 @@
+using GalleryApp.Core.Contracts;
+using GalleryApp.Core.Models;
+using GalleryApp.DataAccess.SQL;
 using System;
 
 using Unity;
@@ -42,6 +45,8 @@ namespace GalleryApp.MVCUI
 
             // TODO: Register your type's mappings here.
             // container.RegisterType<IProductRepository, ProductRepository>();
+            container.RegisterType<IRepository<Gallery>, SQLRepository<Gallery>>();
+            container.RegisterType<IRepository<GalleryImage>, SQLRepository<GalleryImage>>();
         }
     }
 }

@@ -192,6 +192,8 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\GalleryImageManagerController.cs" />
+    <Compile Include="Controllers\GalleryManagerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -259,9 +261,19 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\GalleryManager\Index.cshtml" />
+    <Content Include="Views\GalleryManager\Create.cshtml" />
+    <Content Include="Views\GalleryManager\Edit.cshtml" />
+    <Content Include="Views\GalleryManager\Delete.cshtml" />
+    <Content Include="Views\GalleryImageManager\Index.cshtml" />
+    <Content Include="Views\GalleryImageManager\Create.cshtml" />
+    <Content Include="Views\GalleryImageManager\Edit.cshtml" />
+    <Content Include="Views\GalleryImageManager\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\GalleryImages\" />
+    <Folder Include="Content\Gallery\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
