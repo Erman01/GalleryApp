@@ -16,5 +16,6 @@ namespace GalleryApp.DataAccess.SQL
         }
         public DbSet<Gallery> Galleries { get; set; }
         public DbSet<GalleryImage> GalleryImages { get; set; }
+        public DbSet<Customer> Customers { get; set; }
     }
 }

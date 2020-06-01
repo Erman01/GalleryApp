@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Contracts\IRepository.cs" />
     <Compile Include="Models\BaseEntity.cs" />
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Gallery.cs" />
     <Compile Include="Models\GalleryImage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

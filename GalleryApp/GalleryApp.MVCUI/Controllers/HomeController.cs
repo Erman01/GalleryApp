@@ -18,20 +18,20 @@ namespace GalleryApp.MVCUI.Controllers
             _galleryImageRespository = galleryImageRespository;
             _galleryRepository = galleryRepository;
         }
-        public ActionResult Index(string GalleryName = null)
+        public ActionResult Index(string galleryName = null)
         {
           
             List<GalleryImage> galleryImageList;
             List<Gallery> galleryList = _galleryRepository.Collection().ToList();
 
-            if (GalleryName == null)
+            if (galleryName == null)
             {
                 galleryImageList = _galleryImageRespository.Collection().ToList();
                
             }
             else
             {
-                galleryImageList = _galleryImageRespository.Collection().Where(x=>x.GalleryName== GalleryName).ToList();
+                galleryImageList = _galleryImageRespository.Collection().Where(x=>x.GalleryName== galleryName).ToList();
 
             }
             ImagesByGalleryViewModel viewModel = new ImagesByGalleryViewModel()

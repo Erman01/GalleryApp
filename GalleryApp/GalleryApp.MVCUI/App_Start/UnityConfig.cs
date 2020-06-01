@@ -47,6 +47,7 @@ namespace GalleryApp.MVCUI
             // container.RegisterType<IProductRepository, ProductRepository>();
             container.RegisterType<IRepository<Gallery>, SQLRepository<Gallery>>();
             container.RegisterType<IRepository<GalleryImage>, SQLRepository<GalleryImage>>();
+            container.RegisterType<IRepository<Customer>, SQLRepository<Customer>>();
         }
     }
 }

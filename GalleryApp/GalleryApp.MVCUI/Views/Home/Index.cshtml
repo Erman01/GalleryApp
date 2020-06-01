@@ -2,25 +2,28 @@
 @{
     ViewBag.Title = "Home Page";
 }
-
-<div class="col-md-3">
-    @Html.ActionLink("All Images", "Index", null,new {@class="btn btn-default" })
+    <br />
+<div class="col-md-2">
+    @Html.ActionLink("All Images", "Index", null,new {@class="btn btn-primary" })
 
     @foreach (var item in Model.Galleries)
     {
-    <a href="@Url.Action("Index","Home",new {GalleryName = item.GalleryName })">
-        <img class="img-responsive" src="~/Content/Gallery/@item.ImageUrl" style="height:100px;padding:10px;margin:10px" />
+    <a href="@Url.Action("Index","Home",new {galleryName = item.GalleryName })">
+
+        <div class="col-md-12" style="height:100px;margin:3px;padding:3px;border:solid thin whitesmoke">
+            <img class="img-responsive" src="~/Content/Gallery/@item.ImageUrl" style="height:80px"/>
+        </div>
     </a>
 
     }
 
 </div>
-<div class="col-md-9">
+<div class="col-md-10">
     @foreach (var item in Model.GalleryImages)
     {
-        <div class="col-md-2" style="height:150px;padding:10px;margin:10px;border:solid thin whitesmoke">
+        <div class="col-md-3" style="height:250px;padding:10px;margin:10px;border:solid thin whitesmoke">
             <div class="col-md-12">
-                <img class="img-responsive" style="height:100px" src="~/Content/GalleryImages/@item.GalleryImageUrl" />
+                <img class="img-responsive" style="height:150px" src="~/Content/GalleryImages/@item.GalleryImageUrl" />
             </div>
 
             <div class="col-md-12">

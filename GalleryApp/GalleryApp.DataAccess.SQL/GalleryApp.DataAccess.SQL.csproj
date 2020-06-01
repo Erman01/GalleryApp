@@ -60,6 +60,10 @@
     <Compile Include="Migrations\202005280313269_ImageUrlColumnAddedToGalleryTable.designer.cs">
       <DependentUpon>202005280313269_ImageUrlColumnAddedToGalleryTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006012242396_CreateCustomerTable.cs" />
+    <Compile Include="Migrations\202006012242396_CreateCustomerTable.designer.cs">
+      <DependentUpon>202006012242396_CreateCustomerTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLRepository.cs" />
@@ -80,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005280313269_ImageUrlColumnAddedToGalleryTable.resx">
       <DependentUpon>202005280313269_ImageUrlColumnAddedToGalleryTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006012242396_CreateCustomerTable.resx">
+      <DependentUpon>202006012242396_CreateCustomerTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

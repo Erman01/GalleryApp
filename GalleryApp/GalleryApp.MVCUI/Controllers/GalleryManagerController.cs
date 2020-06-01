@@ -1,14 +1,18 @@
 ﻿using GalleryApp.Core.Contracts;
 using GalleryApp.Core.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.ModelBinding;
 using System.Web.Mvc;
 
 namespace GalleryApp.MVCUI.Controllers
 {
+ //ekemanci@gmail.com   Erman@7971
     public class GalleryManagerController : Controller
     {
         IRepository<Gallery> _galleryRepository;
@@ -28,6 +32,7 @@ namespace GalleryApp.MVCUI.Controllers
 
             return View(gallery);
         }
+        
         [HttpPost]
         public ActionResult Create(Gallery gallery, HttpPostedFileBase file)
         {
@@ -39,7 +44,7 @@ namespace GalleryApp.MVCUI.Controllers
             {
                 if (file!=null)
                 {
-                    gallery.ImageUrl = gallery.Id + Path.GetExtension(file.FileName);
+                    gallery.ImageUrl =/*User.Identity.GetUserId()+*/ gallery.Id + Path.GetExtension(file.FileName);
                     file.SaveAs(Server.MapPath("//Content//Gallery//") + gallery.ImageUrl);
                 }
                 _galleryRepository.Insert(gallery);
